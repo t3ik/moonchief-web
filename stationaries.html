@@ -39,6 +39,63 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <style>
+            /* Gallery container */
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                
+            }
+        
+            /* Gallery item */
+            .gallery-item {
+                flex: 1 1 300px;
+                max-width: 300px;
+                border: 2px solid #ccc;
+                padding: 5px;
+                cursor: pointer;
+            }
+        
+            /* Image styling */
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+            }
+        
+            /* Description placeholder */
+            .gallery-item .description {
+                padding: 10px;
+                margin-top: 0px;
+                font-size: 11px;
+                background-color: #f9f9f9;
+                height: 100px; /* Adjust height as needed */
+            }
+        
+            /* Lightbox */
+            .lightbox {
+            font-size: 18px;
+            color: #f9f9f9;
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+            }
+        
+            .lightbox img {
+                max-width: 80%;
+                max-height: 80%;
+            }
+        </style>
+
     </head>
     <body>
       
@@ -75,6 +132,7 @@
                                 <li>
                                     <a href="about.html">About Us</a>
                                 </li>
+                            
                                 <li class="submenu">
                                     <a href="javascript:void(0)">Products & Services</a>
                                     <ul class="sub-menu">
@@ -129,68 +187,135 @@
             
             <!--  Page Content, class footer-fixed if footer is fixed  -->
             <div id="page-content" class="header-static footer-fixed">
-                <!--  Slider  -->
+                
+                <div id="home-wrap" class="content-section fullpage-wrap">
+                    <!--  Slider  -->
                 <div id="flexslider" class="fullpage-wrap small">
                     <ul class="slides">
-                        <li style="background-image:url(assets/img/contact-us.jpg)">
+                        <li style="background-image:url(assets/img/products-main.jpg)">
                             <div class="text text-center">
-                                <h1 class="white margin-bottom-small">Contact Us</h1>
-                                <p class="heading white">Start a project with us.</p>
+                                <h1 class="white margin-bottom-small">Our Products & Services</h1>
+                                <p class="heading white">All for your business needs</p>
                             </div>
                             <div class="gradient dark"></div>
                         </li>
                     </ul>
                 </div>
-                <!--  END Slider  -->
-                <div id="home-wrap" class="content-section fullpage-wrap">
-                    <div class="row margin-leftright-null">
+                
+                <div id="post-wrap" class="content-section fullpage-wrap">
+                    <div class="row padding-md content-post no-margin">
+                        <div class="col-md-offset-3 col-md-6 padding-leftright-null text-center">
+                        <h2 class="margin-bottom-null title center grey">Stationaries</h2>
+                        <p class="padding-onlytop-md heading full black left">We offer a diverse range of stationaries products that can be customized to suit your preferences and needs.</p>
+</div></div></div><!--  END Slider  -->
+                   
+<!--Product List--Start-->
+<div class="gallery">
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC3383EYV.jpg', '')">
+        <img src="assets/img/stationaries/MNC3383EYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC3383EYV</b><br>
+            Size: 14.0cm(H) x 10.6cm(L) x 1.0cm(W)<br>
+Colour: Orange, Green, Red, Black, Purple, Blue<br>
+Remarks: Come with recycled pen and
+sticky note, around 106g/pc</div>
+    </div>
+    
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC01NMX.jpg', '')">
+        <img src="assets/img/stationaries/MNC01NMX.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC01NMX</b><br>
+            Dimension: 17.8cm (height) x 14cm (width)<br>
+Extra Info: • Single Lines<br>
+• Comes with a Ball Pen
+            </div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC02NMX.jpg', '')">
+        <img src="assets/img/stationaries/MNC02NMX.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC02NMX</b><br>
+            Dimension: 11cm (height) x 8.6cm (width)<br>
+Extra Info: • Single Lines<br>
+• Comes with a Ball Pen</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC5153EYV.jpg', '')">
+        <img src="assets/img/stationaries/MNC5153EYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC5153EYV</b><br>
+            Size: 18.0cm(H) x 14.0cm(L)<br>
+Colour: Black, Green, Red, Blue<br>
+Remarks: Come with recycled pen
+& sticky notes</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC4229EBYV.jpg', '')">
+        <img src="assets/img/stationaries/MNC4229EBYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC4229EBYV</b><br>
+            Size : (OPEN) 18.5cm (H) X 9.0cm (L)<br>
+(FOLD) 9.2cm (L) X 9.3cm (H)<br>
+Remarks: Not included Pen</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC1230EYV.jpg', '')">
+        <img src="assets/img/stationaries/MNC1230EYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC1230EYV</b><br>
+            Size: 9.0cm(L) x 9.0cm(W) x 1.0cm(W)<Br>
+Colour: Brown, White, Black<Br>
+Remarks: Come with recycled pen
+and sticky note</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC5151EYV.jpg', '')">
+        <img src="assets/img/stationaries/MNC5151EYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC5151EYV</b><br>
+            Size: 21.0cm(H) x 14.5cm(L)<br>
+Remarks: Come with recycled pen</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/stationaries/MNC16EMG.jpg', '')">
+        <img src="assets/img/stationaries/MNC16EMG.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC16EMG</b><br>
+            Size : 10cm (W) X 14.5cm (H)<br>
+            Remarks : 70 sheets with Pen</div>
+    </div>
+
+
+       
+
+   
+    <!-- Add more gallery items as needed -->
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="" id="lightbox-image">
+    <div id="lightbox-description"></div>
+    <button onclick="closeLightbox()">Close</button>
+</div>
+
+<script>
+    function openLightbox(imageSrc, description) {
+        document.getElementById('lightbox-image').src = imageSrc;
+        document.getElementById('lightbox-description').innerText = description;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script><br>
+ <!--Product List--End-->                                   
+                                    
+                                    
                         
-                    </div>
-                    <div class="row margin-leftright-null">
-                        <div class="col-md-6 padding-leftright-null">
-                            <div class="text">
-                                <h2 class="margin-bottom-null title left">Get in touch</h2>
-                                <div class="padding-onlytop-md">
-                                    <h3 class="grey big margin-bottom-small">Here's how you can reach us</h3>
-                                    <p class="heading left margin-bottom">We're here to help and answer any question you might have. We look forward to hearing from you.</p>
-                                    <p><span class="contact-info">Address <br><em>22, Jalan Bukit Maluri 3,<br>
-                                        Taman Bukit Maluri,<br>
-                                        52100 Kepong, Selangor.<br>
-                                        Malaysia</em></span><br><span class="contact-info">Phone <br><em>KY: 017-243 3755</em></span><br><span class="contact-info">Email <a href="mailto:moonchiefsolutions@gmail.com"><em>moonchiefsolutions@gmail.com</em></a></span></p>
-                                    <p><span class="contact-info">Monday to Friday <em>9.00 am to 6.00 pm</em></span><br><span class="contact-info">Saturday from <em>9.00 am to 12.00 pm</em></span></p>
-                                </div>
                             </div>
                         </div>
-                       
-                            <div class="col-md-6 padding-leftright-null">
-                            <div class="text padding-md-top-null">
-                                <form id="contact-form" class="padding-md padding-md-topbottom-null">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <input class="form-field" name="name" id="name" type="text" placeholder="Name">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input class="form-field" name="mail" id="mail" type="text" placeholder="Email">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input class="form-field" name="subjectForm" id="subjectForm" type="text" placeholder="Subject">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <textarea class="form-field" name="messageForm" id="messageForm" rows="6" placeholder="Your Message"></textarea>
-                                            <div class="submit-area padding-onlytop-sm">
-                                                <input type="submit" id="submit-contact" class="btn-alt active shadow" value="Send Message">
-                                                <div id="msg" class="message"></div> 
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3983.594317172842!2d101.6252435!3d3.2007551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc461ab24807ed%3A0x66d9bf840ac06756!2s22%2C%20Jalan%20Bukit%20Maluri%203%2C%20Taman%20Bukit%20Maluri%2C%2052100%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1669610660950!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                    </div>
+                    </div></div>
+
+                    <!-- Accordion -->       
+                    
+    <!--  END Projects Section  -->
+                    
+                    <!--  Section Image Background with overlay  -->
+                   
+                    <!--  END Section Image Background with overlay  -->
+                    
                 </div>
             </div>
             <!--  END Page Content, class footer-fixed if footer is fixed  -->
@@ -229,10 +354,6 @@
                             </a></li>
                             <li>Mail <a href="mailto:info@moonchief.com.my">info@moonchief.com.my</a></li>
                             <li>Monday to Friday <span class="white">9.00 am to 6.00 pm</span><br>Saturday from <span class="white">9.00 am to 12.00 pm</span></li>
-                            <li><a href="">22, Jalan Bukit Maluri 3,<br>
-                                Taman Bukit Maluri,<br>
-                                52100 Kepong, Selangor,<br>
-                                Malaysia</a></li>
                         </ul>
                     </div>
                 </div>
@@ -264,7 +385,6 @@
         <script src="assets/js/imagesloaded.min.js"></script>
         <script src="assets/js/pace.min.js"></script>
         <script src="assets/js/typed.js"></script>
-        <script src="assets/js/maps.js"></script>
         <script src="assets/js/main.js"></script>
     </body>
 </html>

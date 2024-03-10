@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Moonchief Solutions</title>
+        <link rel="icon" type="image/x-icon" href="/assets/img/mcs_favicon.ico">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css">
+
+        <!-- Custom css -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="assets/css/ionicons.min.css">
+        
+        <!-- Flexslider -->
+        <link rel="stylesheet" href="assets/css/flexslider.css">
+        
+        <!-- Owl -->
+        <link rel="stylesheet" href="assets/css/owl.carousel.css">
+        
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        
+        <link rel="stylesheet" href="assets/css/jquery.fullPage.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <style>
+            /* Gallery container */
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                
+            }
+        
+            /* Gallery item */
+            .gallery-item {
+                flex: 1 1 300px;
+                max-width: 300px;
+                border: 2px solid #ccc;
+                padding: 5px;
+                cursor: pointer;
+            }
+        
+            /* Image styling */
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+            }
+        
+            /* Description placeholder */
+            .gallery-item .description {
+                padding: 10px;
+                margin-top: 0px;
+                font-size: 11px;
+                background-color: #f9f9f9;
+                height: 120px; /* Adjust height as needed */
+            }
+        
+            /* Lightbox */
+            .lightbox {
+            font-size: 18px;
+            color: #f9f9f9;
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+            }
+        
+            .lightbox img {
+                max-width: 80%;
+                max-height: 80%;
+            }
+        </style>
+
+    </head>
+    <body>
+      
+        <!--  loader  -->
+        <div id="myloader">
+            <span class="loader">
+                <img src="assets/img/logo.png" class="normal" alt="logo">
+                <img src="assets/img/logo.png" class="retina" alt="logo">
+            </span>
+        </div>
+        
+        <!--  Main Wrap  -->
+        <div id="main-wrap">
+            <!--  Header & Menu  -->
+            <header id="header" class="fixed transparent">
+                <nav class="navbar navbar-default white">
+                    <!--  Header Logo  -->
+                    <div id="logo">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logo.png" class="normal" alt="logo">
+                            <img src="assets/img/logo.png" class="retina" alt="logo">
+                            <img src="assets/img/logo_white.png" class="normal white-logo" alt="logo">
+                            <img src="assets/img/logo_white.png" class="retina white-logo" alt="logo">
+                        </a>
+                    </div>
+                    <!--  END Header Logo  -->
+                    <!--  Classic menu, responsive menu classic  -->
+                    <div id="menu-classic">
+                        <div class="menu-holder">
+                            <ul>
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">About Us</a>
+                                </li>
+                            
+                                <li class="submenu">
+                                    <a href="javascript:void(0)">Products & Services</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="products.html">Overview</a></li>
+                                        <li><a href="drinkwares.html">Drinkwares</a></li>
+                                        <li><a href="bags.html">Bags</a></li>
+                                        <li><a href="uniques.html">Unique Items</a></li>
+                                        <li><a href="stationaries.html">Stationaries</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact Us</a>
+                                </li>
+                                <!-- Search Icon -->
+                                <li class="search">
+                                    <i class="icon ion-ios-search"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  END Classic menu, responsive menu classic  -->
+                    <!--  Button for Responsive Menu Classic  -->
+                    <div id="menu-responsive-classic">
+                        <div class="menu-button">
+                            <span class="bar bar-1"></span>
+                            <span class="bar bar-2"></span>
+                            <span class="bar bar-3"></span>
+                        </div>
+                    </div>
+                    <!--  END Button for Responsive Menu Classic  -->
+                    <!--  Search Box  -->
+                    <div id="search-box">
+                        <form role="search" id="search-form" class="black big">
+                            <div class="form-input">
+                                <input class="form-field black big" type="search" placeholder="Search...">
+                                <span class="form-button big">
+                                    <button type="button">
+                                        <i class="icon ion-ios-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                        <button class="close-search-box">
+                            <i class="icon ion-ios-close-empty"></i>
+                        </button>
+                    </div>
+                    <!--  END Search Box  -->
+                </nav>
+            </header>
+            <!--  END Header & Menu  -->
+            
+            <!--  Page Content, class footer-fixed if footer is fixed  -->
+            <div id="page-content" class="header-static footer-fixed">
+                
+                <div id="home-wrap" class="content-section fullpage-wrap">
+                    <!--  Slider  -->
+                <div id="flexslider" class="fullpage-wrap small">
+                    <ul class="slides">
+                        <li style="background-image:url(assets/img/products-main.jpg)">
+                            <div class="text text-center">
+                                <h1 class="white margin-bottom-small">Our Products & Services</h1>
+                                <p class="heading white">All for your business needs</p>
+                            </div>
+                            <div class="gradient dark"></div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="post-wrap" class="content-section fullpage-wrap">
+                    <div class="row padding-md content-post no-margin">
+                        <div class="col-md-offset-3 col-md-6 padding-leftright-null text-center">
+                        <h2 class="margin-bottom-null title center grey">Drinkwares</h2>
+                        <p class="padding-onlytop-md heading full black left">We offer a variety of exclusive customizable drinkware options from Moonchief, all poised to meet your needs at a moment's notice.</p>
+</div></div></div><!--  END Slider  -->
+                   
+<!--Product List--Start-->
+
+
+    <div class="gallery">
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC4483-II-DYV.jpg', '')">
+        <img src="assets/img/drinkwares/MNC4483-II-DYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC4483-II DYV</b><br>
+            Material: Glass<br>
+            Colour: Black and Brown<br>
+            Capacity: 400ml<br>
+            Remarks: With Glass straw and box</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC3002DMX.jpg', '')">
+        <img src="assets/img/drinkwares/MNC3002DMX.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC3002DMX</b><br>
+            Capacity : 500ml<br>
+            Size:<br>
+            Flask Size : 6.4cm (W) x 25.0cm (H)<br>
+            Cup Size : 10.0cm (W) x 5.8cm (H)</div>
+    </div>
+    
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC121DIH.jpg', '')">
+        <img src="assets/img/drinkwares/MNC121DIH.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC121DIH</b><br>
+            Outer: 201 Stainless steel with matte pearl finishing<br>
+            Inner: 304 Stainless steel<br>
+            Size : 6.4cm (W) X 22.0cm (H)<br>
+            Capacity: 500ml
+            </div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC001DMX.jpg', '')">
+        <img src="assets/img/drinkwares/MNC001DMX.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC001DMX</b><br>
+            Capacity: 500ml<br>
+            Size : 6.5cm (W) X 23.5cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC002DMX.jpg', '')">
+        <img src="assets/img/drinkwares/MNC002DMX.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC002DMX</b><br>
+            Capacity: 500ml<br>
+            Size : 6.5cm (W) X 23.5cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC001MXCB.jpg', '')">
+        <img src="assets/img/drinkwares/MNC001MXCB.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC001MXCB</b><br>
+            Capacity: 500ml<br>
+            Size : 6.8cm (W) X 23.3cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC002MXR.jpg', '')">
+        <img src="assets/img/drinkwares/MNC002MXR.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC002MXR</b><br>
+            Capacity: 500ml<br>
+Size : 6.6cm (W) X 20.0cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC001MXLK.jpg', '')">
+        <img src="assets/img/drinkwares/MNC001MXLK.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC001MXLK</b><br>
+            Capacity: 500ml<br>
+Features:<br>
+12 hours warm<br>
+Size : 6.5cm (W) X 23.0cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC001MXBB.jpg', '')">
+        <img src="assets/img/drinkwares/MNC001MXBB.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC001MXBB</b><br>
+            Capacity : 700ml<br>
+Size : 6.5cm (W) X 22.5cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC023MXV.jpg', '')">
+        <img src="assets/img/drinkwares/MNC023MXV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC023MXV</b><br>
+            Capacity : 600ml<br>
+Size : 7.0cm (W) X 25.0cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC023MXM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC023MXM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC023MXM</b><br>
+            Capacity : 475ml<br>
+Size : 7.0cm (W) X 11.0cm (H)</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC028MX.jpg', '')">
+        <img src="assets/img/drinkwares/MNC028MX.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC028MX</b><br>
+            Capacity : 600ml<br>
+Size : 6.8cm (W) X 23.0cm (H)</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC039AMU.jpg', '')">
+        <img src="assets/img/drinkwares/MNC039AMU.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC039AMU</b><br>
+            Material : Stainless Steel 304 (Inner)<br>
+Finished : Double Wall/ High Grade Glossy Finishing with Straw<br>
+Capacity : 500ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC818IIYV.jpg', '')">
+        <img src="assets/img/drinkwares/MNC818IIYV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC818IIYV</b><br>
+            Material : Aluminium<br>
+Capacity : 670ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC1725YVM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC1725YVM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC1725YVM</b><br>
+            Material : Stainless Steel Inner + Bamboo<br>
+Capacity : 500ml<br>
+Size : 6.4cm (W) X 24.5cm (H)</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC856YVM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC856YVM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC856YVM</b><br>
+            Material : Stainless Steel Inner + PP Outer layer<br>
+Capacity : 550ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC7787YVMG.jpg', '')">
+        <img src="assets/img/drinkwares/MNC7787YVMG.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC7787YVMG</b><br>
+            Material: Ceramic<br>
+Capacity: 430ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/YV1048MG.jpg', '')">
+        <img src="assets/img/drinkwares/YV1048MG.jpg" alt="Placeholder Image">
+        <div class="description"><b>YV1048MG</b><br>
+            Capacity : 600ml<br>
+            Size : 6.8cm (W) X 23.0cm (H)</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/YV5401TH.jpg', '')">
+        <img src="assets/img/drinkwares/YV5401TH.jpg" alt="Placeholder Image">
+        <div class="description"><b>YV5401TH</b><br>
+            Material : Stainless Steel<br>
+Capacity : 550ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/IHK131M.jpg', '')">
+        <img src="assets/img/drinkwares/IHK131M.jpg" alt="Placeholder Image">
+        <div class="description"><b>IHK131M</b><br>
+            Material: 304 Stainless steel<br> Lid: AS <br>Base: EVA<br>
+Capacity: 340 ml
+</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC4095YVSPII.jpg', '')">
+        <img src="assets/img/drinkwares/MNC4095YVSPII.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC4095YVSPII</b><br>
+            Material: AS<br>
+            Capacity: 500ml,</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC1368YVM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC1368YVM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC1368YVM</b><br>
+            Material: Stainless<br>Capacity: 500ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC1030YVM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC1030YVM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC1030YVM</b><br>
+            Material: PP<br>
+            Capacity: 350ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC4855YVMII.jpg', '')">
+        <img src="assets/img/drinkwares/MNC4855YVMII.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC4855YVMII</b><br>
+            Material: Stainless Steel inner +
+ABS plastic Outer layer <br>
+Capacity: 450ml</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC1361YVM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC1361YVM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC1361YVM</b><br>
+            Material: Double Wall stainless Steel 304 + PP<br>
+Colour: Black<br>
+Capacity: 500ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC005YVCRM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC005YVCRM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC005YVCRM</b><br>
+            Material: Ceramic(body), cork(Bottom),
+plastic (Cap)<br>
+Capacity: 400ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC4096YV.jpg', '')">
+        <img src="assets/img/drinkwares/MNC4096YV.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC4096YV</b><br>
+            Material: BPA Free<br>
+            Colour: Green, Purple, Blue,
+            Black, Yellow, Pink, Red<br>
+            Capacity: 600ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC40YVETS.jpg', '')">
+        <img src="assets/img/drinkwares/MNC40YVETS.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC40YVETS</b><br>
+            Bag + Thermo Mug + Flask<br>Bag: YV4623BC<br>Thermo Mug: MNC008YVAD<br>
+            <b></b>**Contact us for more inquiry</b></div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC4208YVIII.jpg', '')">
+        <img src="assets/img/drinkwares/MNC4208YVIII.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC4208YVIII</b><br>
+            Material: Stainless Steel<br>
+Capacity: 900ml, about 228g/pc</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC111IHM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC111IHM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC111IHM</b><br>
+Body: Tritan(BPA Free), Main Lid: PP, Top Lid: Tritan<br>
+Adjustable sleek handle<br>
+Capacity: 750ml<br>
+</div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC109IHM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC109IHM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC109IHM</b><br>
+            Material:Tritan, PP<br>
+Capacity: 650ml <br>
+Features:
+Detachable compartment
+Easy to clean and maintain
+Dual-purpose bottle: Can be used with
+or without a straw</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC136IHM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC136IHM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC136IHM</b><br>
+            Material: Double Wall stainless Steel 304 + PP<br>
+Capacity: 500ml
+            </div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC120IHM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC120IHM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC120IHM</b><br>
+            Material: AS, PP<br>
+            Capacity: 600ml<br>
+            Ring handle for an easy hold.</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC102IHM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC102IHM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC102IHM</b><br>
+            Material:<br>Body: High borosilicate glass<br>
+Cap: PC,
+Strap: Silicone<br>
+Capacity: 500ml</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC111IHM.jpg', '')">
+        <img src="assets/img/drinkwares/MNC111IHM.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC111IHM</b><br>
+            Material: STAINLESS STEEL 304 (INNER)<br>
+Capacity: 500ML<br>
+FINISHED : DOUBLE WALL/MATT FINISHING</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox('assets/img/drinkwares/MNC2600AMYG.jpg', '')">
+        <img src="assets/img/drinkwares/MNC2600AMYG.jpg" alt="Placeholder Image">
+        <div class="description"><b>MNC2600AMYG</b><br>
+            MATERIAL : STAINLESS STEEL 304(INNER)<br>
+            CAPACITY : 500ML</div>
+    </div>
+   
+    <!-- Add more gallery items as needed -->
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="" id="lightbox-image">
+    <div id="lightbox-description"></div>
+    <button onclick="closeLightbox()">Close</button>
+</div>
+
+<script>
+    function openLightbox(imageSrc, description) {
+        document.getElementById('lightbox-image').src = imageSrc;
+        document.getElementById('lightbox-description').innerText = description;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script><br>
+ <!--Product List--End-->                                   
+                                    
+                                    
+                        
+                            </div>
+                        </div>
+                    </div></div>
+
+                    <!-- Accordion -->       
+                    
+    <!--  END Projects Section  -->
+                    
+                    <!--  Section Image Background with overlay  -->
+                   
+                    <!--  END Section Image Background with overlay  -->
+                    
+                </div>
+            </div>
+            <!--  END Page Content, class footer-fixed if footer is fixed  -->
+            
+            <!--  Footer. Class fixed for fixed footer  -->
+            <footer class="fixed">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="assets/img/logo_white.png" class="normal" alt="logo">
+                            <img src="assets/img/logo_white.png" class="retina" alt="logo">
+                        </div>
+                        <p class="grey-light">We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="heading white margin-bottom-extrasmall">Useful Links</h6>
+                        <ul class="sitemap">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products & Services</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 class="heading white margin-bottom-extrasmall">Social</h6>
+                        <ul class="info">
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Instagram</a></li>
+                            <li><a href="">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="heading white margin-bottom-extrasmall">Contact Us</h6>
+                        <ul class="info">
+                            <li>Phone <br><a href="">Yeap: +6017-243 3755<br>Yiyi: +6011-1614 0285
+                            </a></li>
+                            <li>Mail <a href="mailto:info@moonchief.com.my">info@moonchief.com.my</a></li>
+                            <li>Monday to Friday <span class="white">9.00 am to 6.00 pm</span><br>Saturday from <span class="white">9.00 am to 12.00 pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy col-md-12 padding-leftright-null">
+                    &copy; 2022 Moonchief Solutions</a>
+                    <a href="#main-wrap" class="anchor" id="backtotop">Back to top</a>
+                </div>
+            </footer>
+            <!--  END Footer. Class fixed for fixed footer  -->
+        </div>
+        <!--  Main Wrap  -->
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="assets/js/jquery.min.js"></script>
+        <!-- All js library -->
+        <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.flexslider-min.js"></script>
+        <script src="assets/js/jquery.fullPage.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/isotope.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/smooth.scroll.min.js"></script>
+        <script src="assets/js/jquery.appear.js"></script>
+        <script src="assets/js/jquery.countTo.js"></script>
+        <script src="assets/js/jquery.scrolly.js"></script>
+        <script src="assets/js/plugins-scroll.js"></script>
+        <script src="assets/js/imagesloaded.min.js"></script>
+        <script src="assets/js/pace.min.js"></script>
+        <script src="assets/js/typed.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
